@@ -25,6 +25,6 @@ Repo-specific settings can sit alongside `extends` and override the preset.
   Dependabot alerts and from OSV.
 - Ignores `.python-version`, which is the local dev interpreter.
 
-The schedule is the whole first day of the month (UTC). An earlier window,
-"before 6am on the first day of the month", was too narrow for the hosted
-Renovate app, which doesn't run every hour, and its runs kept missing it.
+The schedule is the whole first day of the month (UTC). The earlier window,
+"before 6am on the first day of the month", produced no scheduled PRs in
+October in any repo that used it.
