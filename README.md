@@ -13,6 +13,18 @@ To use it, a repository's `renovate.json` extends this preset:
 
 Repo-specific settings can sit alongside `extends` and override the preset.
 
+## Adopting the preset in a repository
+
+1. Add the `renovate.json` above.
+2. Turn off Dependabot security updates (Settings → Code security → Dependabot
+   security updates), or with `gh api -X DELETE
+   repos/altissimo-hq/<repo>/automated-security-fixes`. New repositories in the
+   org start with them on, so that alerts get fix PRs before Renovate is set
+   up. Once Renovate is set up it opens the security PRs, and leaving
+   Dependabot on means two PRs for the same fix.
+3. Leave Dependabot alerts on. Renovate reads them to find security fixes.
+4. Close any open Dependabot PRs. Renovate's PRs replace them.
+
 ## What the preset does
 
 `default.json`:
